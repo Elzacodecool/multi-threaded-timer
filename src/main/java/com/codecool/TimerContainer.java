@@ -8,7 +8,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class TimerContainer implements Runnable {
-    private Map<String, Timer> timers = new HashMap<>();
+    private Map<String, Timer> timers = new ConcurrentHashMap<>();
 
 
     @Override
@@ -53,7 +53,9 @@ public class TimerContainer implements Runnable {
         if (timers.containsKey(name)) {
             timers.get(name).startAgain();
         } else {
-            timers.put(name, new Timer(name));
+            Timer timer = new Timer((name));
+            timer.start();
+            timers.put(name, timer);
         }
     }
 
