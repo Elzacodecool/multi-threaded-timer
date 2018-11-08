@@ -3,9 +3,9 @@ package com.codecool;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.sql.Time;
-import java.util.HashMap;
+
 import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 
 public class TimerContainer implements Runnable {
     private Map<String, Timer> timers = new ConcurrentHashMap<>();
@@ -38,7 +38,7 @@ public class TimerContainer implements Runnable {
 
 
     private String[] getCommand() {
-        System.out.println("Command?");
+        System.out.println("\nCommand?");
 
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         try {
