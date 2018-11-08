@@ -13,5 +13,6 @@ public class Timer implements Runnable {
     }
 
     public void display() {
+        System.out.printf("Name: %s, ThreadId: %d, Seconds: %d\n", name, getId(), time);
     }
 }
