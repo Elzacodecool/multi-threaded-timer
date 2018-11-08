@@ -22,7 +22,7 @@ public class Timer extends Thread {
                 wait();
             }
 
-            Thread.sleep(10000);
+            Thread.sleep(1000);
             time++;
 
         } catch (InterruptedException e) {
