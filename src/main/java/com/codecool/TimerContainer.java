@@ -30,6 +30,7 @@ public class TimerContainer implements Runnable {
                     break;
                 case "exit":
                     isRun = false;
+                    exit();
                     break;
             }
         }
@@ -62,5 +63,9 @@ public class TimerContainer implements Runnable {
 
     private void check() {
         timers.forEach((key, value) -> value.display());
+    }
+
+    private void exit() {
+        timers.forEach((key, value) -> value.interrupt());
     }
 }
