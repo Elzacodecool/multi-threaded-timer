@@ -47,4 +47,11 @@ public class TimerContainer implements Runnable {
         return getCommand();
     }
 
+    private void startTimer(String name) {
+        if (timers.containsKey(name)) {
+            timers.get(name).start();
+        } else {
+            timers.put(name, new Timer(name));
+        }
+    }
 }
