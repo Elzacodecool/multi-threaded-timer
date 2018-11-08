@@ -50,14 +50,14 @@ public class TimerContainer implements Runnable {
 
     private void startTimer(String name) {
         if (timers.containsKey(name)) {
-            timers.get(name).start();
+            timers.get(name).startAgain();
         } else {
             timers.put(name, new Timer(name));
         }
     }
 
     private void stopTimer(String name) {
-        timers.get(name).stop();
+        timers.get(name).pause();
     }
 
     private void check() {
