@@ -54,4 +54,8 @@ public class TimerContainer implements Runnable {
             timers.put(name, new Timer(name));
         }
     }
+
+    private void stopTimer(String name) {
+        timers.get(name).stop();
+    }
 }
