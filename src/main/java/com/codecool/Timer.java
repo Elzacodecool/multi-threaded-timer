@@ -11,4 +11,7 @@ public class Timer implements Runnable {
     public void run() {
 
     }
+
+    public void display() {
+    }
 }

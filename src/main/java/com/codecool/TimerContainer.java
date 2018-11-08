@@ -3,6 +3,7 @@ package com.codecool;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.sql.Time;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -57,5 +58,9 @@ public class TimerContainer implements Runnable {
 
     private void stopTimer(String name) {
         timers.get(name).stop();
+    }
+
+    private void check() {
+        timers.forEach((key, value) -> value.display());
     }
 }
